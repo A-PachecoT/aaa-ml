@@ -12,7 +12,10 @@ PYTEST := pytest
 BEHAVE := behave
 
 # Main script
-MAIN_SCRIPT := titanic_model.py
+MAIN_SCRIPT := src/titanic_model.py
+
+# Set PYTHONPATH
+export PYTHONPATH := $(CURDIR)
 
 # Default target
 .DEFAULT_GOAL := help
@@ -37,7 +40,7 @@ test: pytest behave
 
 # Run pytest tests
 pytest:
-	. $(VENV_ACTIVATE) && $(PYTEST) test_titanic_model.py
+	. $(VENV_ACTIVATE) && $(PYTEST) tests/unit/test_titanic_model.py
 
 # Run behave tests
 behave:

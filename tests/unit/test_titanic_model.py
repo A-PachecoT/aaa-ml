@@ -1,6 +1,6 @@
 import pytest
 import numpy as np
-from titanic_model import TitanicModel
+from src.titanic_model import TitanicModel
 
 @pytest.fixture
 def titanic_model():
@@ -8,7 +8,7 @@ def titanic_model():
 
 def test_train_and_validate(titanic_model):
     # Arrange
-    X_train, X_test, y_train, y_test = titanic_model.load_and_preprocess_data('titanic.csv')
+    X_train, X_test, y_train, y_test = titanic_model.load_and_preprocess_data('data/titanic.csv')
 
     # Act
     cv_scores = titanic_model.train_and_validate(X_train, y_train)
@@ -19,7 +19,7 @@ def test_train_and_validate(titanic_model):
 
 def test_evaluate(titanic_model):
     # Arrange
-    X_train, X_test, y_train, y_test = titanic_model.load_and_preprocess_data('titanic.csv')
+    X_train, X_test, y_train, y_test = titanic_model.load_and_preprocess_data('data/titanic.csv')
     titanic_model.train_and_validate(X_train, y_train)
 
     # Act

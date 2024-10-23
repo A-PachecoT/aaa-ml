@@ -1,29 +1,24 @@
-# Ejercicio 7: Aplicación de machine learning con validación de modelos
+# User Story
 
-Descripción
+As a data scientist,
+I want to develop a reliable machine learning model for classifying Titanic survival data,
+So that I can accurately predict passenger survival and gain insights from the dataset.
 
-Desarrolla una aplicación que entrena un modelo de machine learning para clasificar datos. Necesitas implementar la validación del modelo y asegurar que cumple con los criterios de desempeño.
+## Acceptance Criteria
 
-Instrucciones
+1. The model should achieve a minimum accuracy of 75% on the test set.
+2. The model should have a minimum precision of 75% for both survival and non-survival classes.
+3. The model should have a minimum recall of 75% for both survival and non-survival classes.
+4. The model's F1-score should be at least 75% for both classes.
+5. The model should use cross-validation during training to ensure robustness.
+6. The entire process of data loading, preprocessing, model training, and evaluation should be automated.
 
-Escribe una historia de usuario que describa la necesidad de un modelo preciso y confiable.
+## Gherkin Scenarios
+```gherkin
+Feature: Titanic Survival Prediction Model
 
-Define criterios de aceptación que incluyan métricas de desempeño específicas (precisión, recall, F1-score).
-
-Escribe escenarios en Gherkin que prueben el entrenamiento, validación y evaluación del modelo.
-
-Implementa las definiciones de pasos en Behave, utilizando datos de entrenamiento y pruebas.
-
-Escribe pruebas en pytest, siguiendo el patrón AAA, para automatizar la validación del modelo.
-
-Explora temas de ciencias de la computación como aprendizaje automático, estadística y validación cruzada.
-
-Puntos a considerar
-
-Uso de librerías de ML: Puedes utilizar librerías como scikit-learn para implementar el modelo.
-
-Validación del modelo: Implementa métodos para evaluar el desempeño y prevenir overfitting.
-
-Automatización de pruebas: Asegura que las pruebas pueden ejecutarse automáticamente y verificar los criterios de desempeño.
-
-Detalles sobre ML: El código usará el dataset titanic y crea un modelo simple en un bloque de código
+  Scenario: Evaluate the model on the test set
+    Given the trained model and the test dataset
+    When the model predicts survival on the test set
+    Then the model's performance metrics should be greater than 0.75
+```

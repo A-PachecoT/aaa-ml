@@ -1,12 +1,12 @@
 from behave import given, when, then
-from titanic_model import TitanicModel
+from src.titanic_model import TitanicModel
 import numpy as np
 
 
 @given('the trained model and the test dataset')
 def step_trained_model_and_test_data(context):
     context.model = TitanicModel()
-    context.X_train, context.X_test, context.y_train, context.y_test = context.model.load_and_preprocess_data('titanic.csv')
+    context.X_train, context.X_test, context.y_train, context.y_test = context.model.load_and_preprocess_data('data/titanic.csv')
     context.model.train_and_validate(context.X_train, context.y_train)
 
 @when('the model predicts survival on the test set')

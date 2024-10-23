@@ -53,7 +53,7 @@ class TitanicModel:
 
 if __name__ == "__main__":
     model = TitanicModel()
-    X_train, X_test, y_train, y_test = model.load_and_preprocess_data('titanic.csv')
+    X_train, X_test, y_train, y_test = model.load_and_preprocess_data('data/titanic.csv')
     
     cv_scores = model.train_and_validate(X_train, y_train)
     print(f"Cross-validation scores: {cv_scores}")
