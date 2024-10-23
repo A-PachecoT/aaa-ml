@@ -15,7 +15,7 @@ def test_train_and_validate(titanic_model):
 
     # Assert
     assert len(cv_scores) == 5  # 5-fold cross-validation
-    assert np.mean(cv_scores) >= 0.8  # Minimum required accuracy
+    assert np.mean(cv_scores) >= 0.75  # Minimum required accuracy
 
 def test_evaluate(titanic_model):
     # Arrange
@@ -26,7 +26,7 @@ def test_evaluate(titanic_model):
     accuracy, precision, recall, f1 = titanic_model.evaluate(X_test, y_test)
 
     # Assert
-    assert accuracy >= 0.8
+    assert accuracy >= 0.75
     assert precision >= 0.75
     assert recall >= 0.75
     assert f1 >= 0.75

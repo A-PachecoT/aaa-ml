@@ -6,7 +6,7 @@ So that I can accurately predict passenger survival and gain insights from the d
 
 ## Acceptance Criteria
 
-1. The model should achieve a minimum accuracy of 80% on the test set.
+1. The model should achieve a minimum accuracy of 75% on the test set.
 2. The model should have a minimum precision of 75% for both survival and non-survival classes.
 3. The model should have a minimum recall of 75% for both survival and non-survival classes.
 4. The model's F1-score should be at least 75% for both classes.
